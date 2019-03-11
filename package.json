@@ -1,0 +1,19 @@
+{
+  "name": "kuqi",
+  "version": "1.0.0",
+  "description": "react + webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smilv/kuqi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smilv/kuqi/issues"
+  },
+  "homepage": "https://github.com/smilv/kuqi#readme"
+}
