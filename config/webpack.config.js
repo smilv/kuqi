@@ -17,6 +17,16 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../public/index.html"),
             inject: true
-        })
-    ]
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin()
+    ],
+    devServer: {
+        contentBase: path.resolve(__dirname, "../build"),
+        publicPath: "/",
+        historyApiFallback: true,
+        inline: true,
+        hot: true,
+        port: 80
+    }
 };
