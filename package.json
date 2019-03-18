@@ -1,6 +1,7 @@
 {
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node config/webpack-dev-server",
         "build": "webpack --config config/webpack.config.js"
     },
     "bugs": {
@@ -9,7 +10,7 @@
     "homepage": "https://github.com/smilv/kuqi#readme",
     "devDependencies": {
         "babel-core": "^6.26.3",
-        "babel-loader": "^8.0.5",
+        "babel-loader": "^7.1.5",
         "babel-preset-es2015": "^6.24.1",
         "babel-preset-react": "^6.24.1",
         "clean-webpack-plugin": "^2.0.0",
@@ -17,6 +18,8 @@
         "react-dom": "^16.8.4",
         "react-router-dom": "^4.3.1",
         "webpack": "^4.29.6",
-        "webpack-cli": "^3.2.3"
+        "webpack-cli": "^3.2.3",
+        "webpack-dev-server": "^3.2.1",
+        "webpack-hot-middleware": "^2.24.3"
     }
 }

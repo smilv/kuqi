@@ -1,13 +1,22 @@
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-console.log(process.cwd());
 module.exports = {
     mode: "development",
     entry: "./src/index.js",
     output: {
-        path: path.resolve(process.cwd(), "build"),
+        path: path.resolve(__dirname, "../build"),
         filename: "static/js/bundle.js"
     },
-    plugins: [new CleanWebpackPlugin()]
+    module: {
+        rules: [{ test: /\.(js|jsx)$/, loader: "babel-loader", exclude: /node_modules/ }]
+    },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, "../public/index.html"),
+            inject: true
+        })
+    ]
 };
