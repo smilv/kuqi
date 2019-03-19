@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 module.exports = {
@@ -10,7 +11,20 @@ module.exports = {
         filename: "static/js/bundle.js"
     },
     module: {
-        rules: [{ test: /\.(js|jsx)$/, loader: "babel-loader", exclude: /node_modules/ }]
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                loader: "babel-loader",
+                exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader", "sass-loader"]
+                })
+            }
+        ]
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -19,7 +33,8 @@ module.exports = {
             inject: true
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+        new ExtractTextPlugin("static/css/style.css")
     ],
     devServer: {
         contentBase: path.resolve(__dirname, "../build"),

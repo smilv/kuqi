@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import "./styles.scss";
 
 class App extends Component {
     render() {
-        return <div>hello! React</div>;
+        return <a>hello! React1</a>;
     }
 }
 
