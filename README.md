@@ -24,3 +24,8 @@ npm run build 打包编译
 -   组件文件命名采用帕斯卡命名法，如：KuqiCard.jsx
 -   js、scss 文件命名采用英文小写字母，用"-"分隔单词，如 kuqi-card.js kuqi-card.scss
 -   img 文件命名英文小写字母，用"\_"分隔单词，如 kuqi_icon.png
+
+### 资源链接
+
+图片在线压缩网站
+https://tinypng.com/
