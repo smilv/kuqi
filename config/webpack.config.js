@@ -27,7 +27,7 @@ module.exports = {
                         {
                             loader: "sass-resources-loader",
                             options: {
-                                resources: path.resolve(__dirname, "../src/assets/css/theme.scss")
+                                resources: path.resolve(__dirname, "../src/assets/css/common.scss")
                             }
                         }
                     ]
@@ -58,6 +58,7 @@ module.exports = {
         historyApiFallback: true,
         inline: true,
         hot: true,
-        port: 80
+        port: 80,
+        open: true
     }
 };
