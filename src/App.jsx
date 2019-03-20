@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./assets/css/theme.scss";
 import "./assets/css/reset.scss";
 
 class App extends Component {
