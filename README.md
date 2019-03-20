@@ -2,15 +2,15 @@
 
 #### 目录结构
 
-| build ---- 打包后目录  
-| config --- webpack 配置文件  
-| public --- 主页 Index.html  
+| build - 打包后目录  
+| config - webpack 配置文件  
+| public - 主页 Index.html  
 | src  
-| —— assets ------ 静态资源  
-| —— components -- 组件  
-| —— pages ------- 页面组件  
-| —— utils ------- js 工具类  
-| App.jsx -- 主页组件  
+| —— assets - 静态资源  
+| —— component - 组件  
+| —— pages - 页面组件  
+| —— utils - js 工具类  
+| App.jsx - 主页组件  
 | index.js - 主入口文件
 
 #### 命令行
