@@ -15,7 +15,7 @@
 
 ### 命令行
 
-npm start 本地开发
+npm start 本地开发  
 npm run build 打包编译
 
 ### 开发建议
@@ -27,5 +27,5 @@ npm run build 打包编译
 
 ### 资源链接
 
-图片在线压缩网站
-https://tinypng.com/
+-   图片在线压缩网站
+    https://tinypng.com/
