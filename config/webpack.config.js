@@ -23,6 +23,13 @@ module.exports = {
                     fallback: "style-loader",
                     use: ["css-loader", "sass-loader"]
                 })
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/,
+                loader: "url-loader",
+                options: {
+                    limit: 10000
+                }
             }
         ]
     },
