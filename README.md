@@ -6,7 +6,7 @@
 | config --- webpack 配置文件  
 | public --- 主页 Index.html  
 | src  
-| —— assets ------ 静态资源
+| —— assets ------ 静态资源  
 | —— components -- 组件  
 | —— pages ------- 页面组件  
 | —— utils ------- js 工具类  
