@@ -10,6 +10,9 @@ module.exports = {
         path: path.resolve(__dirname, "../build"),
         filename: "static/js/[name].js"
     },
+    resolve: {
+        extensions: [".js", ".jsx", ".json"]
+    },
     module: {
         rules: [
             {

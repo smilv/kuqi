@@ -2,9 +2,17 @@ import React, { Component } from "react";
 import "./assets/css/reset.scss";
 import "./assets/css/common.scss";
 
+import { BrowserRouter } from "react-router-dom";
+
+import Routes from "./route/index.jsx";
+
 class App extends Component {
     render() {
-        return <a>hello! React</a>;
+        return (
+            <BrowserRouter>
+                <Routes />
+            </BrowserRouter>
+        );
     }
 }
 
