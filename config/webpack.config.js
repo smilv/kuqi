@@ -8,7 +8,7 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "../build"),
-        filename: "static/js/bundle.js"
+        filename: "static/js/[name].js"
     },
     module: {
         rules: [
@@ -50,7 +50,7 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-        new ExtractTextPlugin("static/css/style.css")
+        new ExtractTextPlugin("static/css/[name].css")
     ],
     devServer: {
         contentBase: path.resolve(__dirname, "../build"),
