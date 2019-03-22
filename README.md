@@ -9,6 +9,7 @@
 | —— assets - 静态资源  
 | —— component - 组件  
 | —— pages - 页面组件  
+| —— route - 路由  
 | —— utils - js 工具类  
 | App.jsx - 主页组件  
 | index.js - 主入口文件
