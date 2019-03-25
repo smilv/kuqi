@@ -25,7 +25,13 @@ module.exports = {
                 loader: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: [
-                        "css-loader",
+                        {
+                            loader: "css-loader",
+                            options: {
+                                modules: true,
+                                localIdentName: "[name]__[local]___[hash:base64:5]"
+                            }
+                        },
                         "sass-loader",
                         {
                             loader: "sass-resources-loader",
