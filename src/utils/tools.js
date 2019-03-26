@@ -1,12 +1,12 @@
 module.exports = {
     toast: content => {
-        var _toasts = document.getElementsByClassName("toast");
+        const _toasts = document.getElementsByClassName("toast");
         if (_toasts.length < 1) {
-            var _div = document.createElement("div");
-            var _span = document.createElement("span");
+            const _div = document.createElement("div");
+            const _span = document.createElement("span");
             _div.className = "toast clear";
             _span.className = "toolsIcon";
-            var con = document.createElement("p");
+            const con = document.createElement("p");
             con.style.float = "left";
             con.style.paddingLeft = "0.93rem";
             con.innerHTML = content;
