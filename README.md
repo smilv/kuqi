@@ -9,6 +9,7 @@
 | —— assets - 静态资源  
 | —— axios - 接口调用  
 | —— component - 组件  
+| —— mock - 假数据  
 | —— pages - 页面组件  
 | —— route - 路由  
 | —— utils - js 工具类  

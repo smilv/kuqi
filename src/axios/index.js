@@ -13,7 +13,7 @@ instance.interceptors.request.use(
 //响应拦截器
 instance.interceptors.response.use(
     response => {
-        return Promise.reject(response);
+        return Promise.reject(response.data);
     },
     error => {
         return Promise.reject(error);

@@ -3,7 +3,14 @@ import styles from "./css/index.scss";
 
 import axios from "../../axios";
 
-axios.userInfo({ id: 2 }, { sex: 1 });
+axios.userInfo({ id: 2 }, { sex: 1 }).then(
+    response => {
+        console.log(response);
+    },
+    error => {
+        console.log(error);
+    }
+);
 
 class Home extends Component {
     render() {
