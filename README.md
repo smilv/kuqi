@@ -7,6 +7,7 @@
 | public - 主页 Index.html  
 | src  
 | —— assets - 静态资源  
+| —— axios - 接口调用  
 | —— component - 组件  
 | —— pages - 页面组件  
 | —— route - 路由  
