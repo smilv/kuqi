@@ -5,7 +5,7 @@ Mock.setup({
     timeout: "10-1000"
 });
 
-Mock.mock(/user\/info/, "post", {
+Mock.mock(/user\/info/, {
     code: 200,
     data: {
         // 属性 list 的值是一个数组，其中含有 1 到 10 个元素

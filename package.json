@@ -2,7 +2,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "webpack-dev-server --config config/webpack.config.js",
-        "build": "webpack --config config/webpack.config.js"
+        "build": "webpack --config config/webpack.config.js",
+        "dll": "webpack --config config/webpack.dll.config.js"
     },
     "bugs": {
         "url": "https://github.com/smilv/kuqi/issues"

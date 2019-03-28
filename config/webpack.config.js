@@ -52,14 +52,18 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: ["**/*", "!dll/**"] }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../public/index.html"),
             inject: true
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-        new ExtractTextPlugin("static/css/[name].css")
+        new ExtractTextPlugin("static/css/[name].css"),
+        new webpack.DllReferencePlugin({
+            context: __dirname,
+            manifest: require("../build/dll/vendor-manifest.json")
+        })
     ],
     devServer: {
         contentBase: path.resolve(__dirname, "../build"),
