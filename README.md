@@ -19,6 +19,7 @@
 #### 命令行
 
 npm start 本地开发  
+npm run dll 打包第三方库  
 npm run build 打包编译
 
 #### 开发建议
