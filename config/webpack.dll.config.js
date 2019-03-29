@@ -3,6 +3,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const AssetsPlugin = require("assets-webpack-plugin");
 
 module.exports = {
     mode: "production",
@@ -20,6 +21,10 @@ module.exports = {
             path: path.resolve(__dirname, "../build/dll/[name]-manifest.json"),
             name: "[name]_[chunkhash]",
             context: __dirname
+        }),
+        new AssetsPlugin({
+            filename: "bundle-config.json",
+            path: path.resolve(__dirname, "../build/dll")
         })
     ]
 };

@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const bundleConfig = require("../build/dll/bundle-config.json");
 module.exports = {
     mode: "development",
     entry: "./src/index.js",
@@ -52,9 +53,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: ["**/*", "!dll/**"] }),
+        new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: ["build", "!dll/**"] }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../public/index.html"),
+            bundleName: `dll/${bundleConfig.vendor.js}`,
             inject: true
         }),
         new webpack.HotModuleReplacementPlugin(),
