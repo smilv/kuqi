@@ -1,5 +1,4 @@
 const webpack = require("webpack");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
@@ -51,7 +50,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: ["**/*", "!dll/**"] }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../public/index.html"),
             bundleName: `dll/${bundleConfig.vendor.js}`,

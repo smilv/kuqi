@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require("path");
 const bundleConfig = require("../build/dll/bundle-config.json");
 module.exports = {
@@ -64,6 +65,7 @@ module.exports = {
         new webpack.DllReferencePlugin({
             context: __dirname,
             manifest: require("../build/dll/vendor-manifest.json")
-        })
+        }),
+        new BundleAnalyzerPlugin()
     ]
 };
