@@ -54,7 +54,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: ["**/*", "!dll/**"] }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "/index.html"),
+            template: path.resolve(__dirname, "../index.html"),
             bundleName: `dll/${bundleConfig.vendor.js}`,
             inject: true
         }),
