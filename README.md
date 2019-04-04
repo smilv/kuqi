@@ -4,7 +4,6 @@
 
 | build - 打包后目录  
 | config - webpack 配置文件  
-| public - 主页 Index.html  
 | src  
 | —— assets - 静态资源  
 | —— axios - 接口调用  
