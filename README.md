@@ -7,7 +7,7 @@
 | src  
 | —— assets - 静态资源  
 | —— axios - 接口调用  
-| —— component - 组件  
+| —— components - 组件  
 | —— mock - 假数据  
 | —— pages - 页面组件  
 | —— route - 路由  
