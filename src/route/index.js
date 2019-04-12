@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 
-import Home from "../pages/Home";
-import Tab from "../pages/Tab";
+import Home from "../pages/home";
+import Tab from "../pages/tab";
 
 class Routes extends Component {
     render() {

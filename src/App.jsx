@@ -4,7 +4,7 @@ import "./assets/css/common.scss";
 
 import { BrowserRouter } from "react-router-dom";
 
-import Routes from "./route/index.jsx";
+import Routes from "./route/index";
 
 class App extends Component {
     render() {

@@ -10,6 +10,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "../build/dll"),
+        publicPath: "/",
         filename: "dll.[name].[chunkhash:8].js",
         library: "[name]_[chunkhash:8]"
     },
