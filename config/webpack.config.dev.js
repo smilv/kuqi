@@ -2,7 +2,6 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-const bundleConfig = require("../build/dll/bundle-config.json");
 module.exports = {
     mode: "development",
     entry: "./src/index.js",
@@ -53,17 +52,12 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../index.html"),
-            bundleName: `dll/${bundleConfig.vendor.js}`,
             inject: true
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new MiniCssExtractPlugin({
             filename: "static/css/main.css"
-        }),
-        new webpack.DllReferencePlugin({
-            context: __dirname,
-            manifest: require("../build/dll/vendor-manifest.json")
         })
     ],
     devServer: {

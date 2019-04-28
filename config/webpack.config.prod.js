@@ -2,9 +2,7 @@ const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require("path");
-const bundleConfig = require("../build/dll/bundle-config.json");
 module.exports = {
     mode: "production",
     entry: "./src/index.js",
@@ -53,20 +51,33 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: ["**/*", "!dll/**"] }),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "../index.html"),
-            bundleName: `dll/${bundleConfig.vendor.js}`,
             inject: true
         }),
         new webpack.NamedModulesPlugin(),
         new MiniCssExtractPlugin({
             filename: "static/css/main.[contenthash:8].css"
-        }),
-        new webpack.DllReferencePlugin({
-            context: __dirname,
-            manifest: require("../build/dll/vendor-manifest.json")
-        }),
-        new BundleAnalyzerPlugin()
-    ]
+        })
+    ],
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    chunks: "all",
+                    test: /node_modules/,
+                    minSize: 0,
+                    minChunks: 1,
+                    priority: -10
+                },
+                common: {
+                    chunks: "all",
+                    minSize: 0,
+                    minChunks: 2,
+                    priority: -20
+                }
+            }
+        }
+    }
 };
