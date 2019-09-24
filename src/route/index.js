@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Route, NavLink } from "react-router-dom";
+import AsyncComponent from "../components/AsyncComponent";
 
-import Home from "../pages/home";
-import Tab from "../pages/tab";
+const Home = AsyncComponent(() => import("../pages/home"));
+const Tab = AsyncComponent(() => import("../pages/tab"));
 
 class Routes extends Component {
     render() {
