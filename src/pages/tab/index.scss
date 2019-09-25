@@ -1,0 +1,38 @@
+.loginBox {
+    padding: 0 0.55rem;
+}
+.tabBox {
+    display: flex;
+    justify-content: center;
+    margin: 1.4rem 0 0.7rem;
+}
+.tabList {
+    width: 50%;
+    text-align: center;
+    font-size: 0.34rem;
+    color: #999;
+}
+.active {
+    color: #47c88a;
+}
+.tabLine {
+    height: 0.04rem;
+    background-color: #47c88a;
+    display: block;
+    margin: 0.16rem auto 0;
+}
+.tabLine1 {
+    width: 1.39rem;
+}
+.tabLine2 {
+    width: 1.57rem;
+}
+.bomHref {
+    padding-top: 0.3rem;
+}
+.bomHref a {
+    font-size: 0.28rem;
+}
+.bomHref a:last-child {
+    float: right;
+}
