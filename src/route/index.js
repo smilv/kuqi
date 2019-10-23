@@ -8,8 +8,8 @@ class Routes extends Component {
     render() {
         return (
             <div>
-                <NavLink to="/">Home</NavLink>
-                <Route path="/" exact component={Home} />
+                <NavLink to="/">Example</NavLink>
+                <Route path="/" exact component={Example} />
             </div>
         );
     }
