@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, NavLink } from "react-router-dom";
 import AsyncComponent from "../components/AsyncComponent";
 
-const Home = AsyncComponent(() => import("../pages/home"));
+const Example = AsyncComponent(() => import("../views/example"));
 
 class Routes extends Component {
     render() {
