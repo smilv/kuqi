@@ -9,7 +9,7 @@
 | —— axios - 接口调用  
 | —— components - 组件  
 | —— mock - 假数据  
-| —— pages - 页面组件  
+| —— views - 页面组件  
 | —— route - 路由  
 | —— utils - js 工具类  
 | App.jsx - 主页组件  
