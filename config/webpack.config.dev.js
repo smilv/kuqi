@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const env = require("./env");
 module.exports = {
     mode: "development",
     entry: "./src/index.js",
@@ -11,7 +12,10 @@ module.exports = {
         filename: "static/js/[name].js"
     },
     resolve: {
-        extensions: [".js", ".jsx", ".json"]
+        extensions: [".js", ".jsx", ".json"],
+        alias: {
+            "@": path.resolve(__dirname, "../src")
+        }
     },
     module: {
         rules: [
@@ -21,7 +25,8 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.scss$/,
+                test: /\.css$/,
+                exclude: [/node_modules/],
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
@@ -30,13 +35,16 @@ module.exports = {
                             modules: true,
                             localIdentName: "[name]__[local]___[hash:base64:5]"
                         }
-                    },
-                    "sass-loader",
+                    }
+                ]
+            },
+            {
+                test: /\.css$/,
+                include: [/node_modules/],
+                use: [
+                    MiniCssExtractPlugin.loader,
                     {
-                        loader: "sass-resources-loader",
-                        options: {
-                            resources: path.resolve(__dirname, "../src/assets/css/common.scss")
-                        }
+                        loader: "css-loader"
                     }
                 ]
             },
@@ -57,17 +65,25 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
+        new webpack.DefinePlugin(env),
         new MiniCssExtractPlugin({
             filename: "static/css/main.css"
         })
     ],
+    node: {
+        dgram: "empty",
+        fs: "empty",
+        net: "empty",
+        tls: "empty",
+        child_process: "empty"
+    },
     devServer: {
         contentBase: path.resolve(__dirname, "../build"),
         publicPath: "/",
         historyApiFallback: true,
         inline: true,
         hot: true,
-        port: 80,
+        port: 8080,
         open: true
     }
 };

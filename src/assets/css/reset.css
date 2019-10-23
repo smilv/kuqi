@@ -24,7 +24,7 @@ body {
     background: #fff;
     color: #333;
     font-family: "Arial", "Microsoft YaHei", Hiragino Sans GB, "\u5b8b\u4f53", sans-serif;
-    font-size: $size-14;
+    font-size: 14px;
 }
 table {
     border-collapse: collapse;

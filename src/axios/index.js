@@ -1,6 +1,6 @@
 import axios from "axios";
 const instance = axios.create();
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 //请求拦截器
 instance.interceptors.request.use(
     config => {
@@ -19,13 +19,4 @@ instance.interceptors.response.use(
         return Promise.reject(error);
     }
 );
-export default {
-    userInfo: (data, params) => {
-        return instance.post("/user/info/", data, {
-            headers: {
-                cs: 12345
-            },
-            params
-        });
-    }
-};
+export default {};
