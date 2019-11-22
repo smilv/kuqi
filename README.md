@@ -1,7 +1,7 @@
 ### 酷奇 ( react 基础模版 )
 
 #### 目录结构
-
+| api - 域名配置  
 | build - 打包后目录  
 | config - webpack 配置文件  
 | src  
