@@ -1,5 +1,4 @@
 const webpack = require("webpack");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const env = require("./env");
@@ -28,7 +27,6 @@ module.exports = {
                 test: /\.css$/,
                 exclude: [/node_modules/],
                 use: [
-                    MiniCssExtractPlugin.loader,
                     {
                         loader: "css-loader",
                         options: {
@@ -42,7 +40,6 @@ module.exports = {
                 test: /\.css$/,
                 include: [/node_modules/],
                 use: [
-                    MiniCssExtractPlugin.loader,
                     {
                         loader: "css-loader"
                     }
@@ -65,10 +62,7 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-        new webpack.DefinePlugin(env),
-        new MiniCssExtractPlugin({
-            filename: "static/css/main.css"
-        })
+        new webpack.DefinePlugin(env)
     ],
     node: {
         dgram: "empty",
